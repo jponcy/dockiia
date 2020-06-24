@@ -1,0 +1,14 @@
+site:
+  image: httpd
+  ports:
+    - 80:80
+  volumes:
+    - $PWD/site:/usr/local/apache2/htdocs/test:ro
+
+
+useless:
+  build: customimg
+  links:
+    - site
+  ports:
+    - 80
